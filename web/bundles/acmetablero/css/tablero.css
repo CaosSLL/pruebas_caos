@@ -1,0 +1,43 @@
+
+#tablero td {
+    width: 100px;
+    height: 100px;
+}
+
+#tablero {
+    float: left;
+}
+
+#ficha {
+    width: 70px;
+    height: 70px;
+    border-radius: 45px;
+    background-color: red;
+    position: absolute;
+    opacity: 0.5;
+}
+
+#dado {
+    width: 67px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #fcecc1;
+    text-align: center;
+    padding: 31px;
+    margin: 30px;
+    float: left;
+    box-shadow: 5px 5px 5px #48412f;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#dado:hover {
+    cursor: pointer;
+    background-color: #ddc994;
+}
+
+#dado:active {
+    margin-top: 35px;
+    margin-left: 35px;
+    box-shadow: none;
+}

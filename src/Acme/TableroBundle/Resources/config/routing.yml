@@ -1,0 +1,15 @@
+acme_tablero_homepage:
+    pattern:  /
+    defaults: { _controller: AcmeTableroBundle:Tablero:index }
+    
+acme_tablero:
+    pattern:  /tablero
+    defaults: { _controller: AcmeTableroBundle:Tablero:mostrarTablero }
+    
+acme_casilla:
+    pattern:  /casilla/{id}
+    defaults: { _controller: AcmeTableroBundle:Tablero:datosCasilla }
+
+acme_casillaJSON:
+    pattern:  /casillaJSON/{id}
+    defaults: { _controller: AcmeTableroBundle:Tablero:datosCasillaJSON }

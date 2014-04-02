@@ -1,0 +1,42 @@
+TarjetaEvento:
+    type: entity
+    table: tarjeta_evento
+    indexes:
+        id_jugador:
+            columns:
+                - id_jugador
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        texto:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        beneficio:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        penalizacion:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+        idJugador:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: id_jugador
+    lifecycleCallbacks: {  }

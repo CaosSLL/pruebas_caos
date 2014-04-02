@@ -1,0 +1,4 @@
+acme_tablero:
+    resource: "@AcmeTableroBundle/Resources/config/routing.yml"
+    prefix:   /
+

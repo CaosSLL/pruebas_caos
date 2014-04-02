@@ -1,0 +1,35 @@
+Propiedad:
+    type: entity
+    table: propiedad
+    indexes:
+        id_jugador:
+            columns:
+                - id_jugador
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        casilla:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        nombre:
+            type: string
+            nullable: false
+            length: 40
+            fixed: false
+            comment: ''
+        idJugador:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: id_jugador
+    lifecycleCallbacks: {  }

@@ -1,0 +1,65 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Tablero!{% endblock %}
+
+{% block stylesheets %}
+<link href="{{ asset('bundles/acmetablero/css/tablero.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" src="{{ asset('bundles/acmetablero/js/clases.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/acmetablero/js/tablero.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+<h3>Esto es el tablero...</h3>
+<h4>Hola {{ jugador.getNombre }} digooo {{ jugador.getPersonaje }}</h4>
+
+
+<div id="ficha"></div>
+
+<div id="tablero">
+    <table border="1">
+        <tr>
+            <td>Salida</td>
+            <td>1</td>
+            <td>Eventos</td>
+            <td>2</td>
+            <td>Mira el Palantir</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>Personajes</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Mazmorra</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+        </tr>
+    </table>
+</div>
+
+<div id="dado">Tira!</div>
+
+{% endblock %}

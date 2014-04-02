@@ -1,0 +1,38 @@
+Partida:
+    type: entity
+    table: partida
+    indexes:
+        turno_jugador:
+            columns:
+                - turno_jugador
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        fecha:
+            type: date
+            nullable: false
+            comment: ''
+        jugadores:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        bote:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        turnoJugador:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: turno_jugador
+    lifecycleCallbacks: {  }
