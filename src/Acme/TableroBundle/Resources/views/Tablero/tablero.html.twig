@@ -21,7 +21,7 @@
 <div id="ficha"></div>
 
 <div id="tablero">
-    <table border="1">
+    {#<t#able border="1">
         <tr>
             <td>Salida</td>
             <td>1</td>
@@ -57,9 +57,54 @@
             <td>19</td>
             <td>20</td>
         </tr>
+    </table>#}
+    <table>
+        <tr>
+            <td id="casilla8">5</td>
+            <td id="casilla9">6</td>
+            <td id="casilla10">Personajes</td>
+            <td id="casilla11">7</td>
+            <td id="casilla12">8</td>
+        </tr>
+        <tr>
+            <td id="casilla7">Mazmorra</td>
+            {#<td id="casilla20">16</td>
+            <td id="casilla21">17</td>
+            <td id="casilla22">18</td>#}
+            <td colspan="3"></td>
+            <td id="casilla13">9</td>
+        </tr>
+        <tr>
+            <td id="casilla6">4</td>
+            {#<td id="casilla19">15</td>
+            <td id="casilla24">20</td>
+            <td id="casilla23">19</td>#}
+            <td colspan="3"></td>
+            <td id="casilla14">10</td>
+        </tr>
+        <tr>
+            <td id="casilla5">3</td>
+            {#<td id="casilla18">14</td>
+            <td id="casilla17">13</td>
+            <td id="casilla16">12</td>#}
+            <td colspan="3"></td>
+            <td id="casilla15">11</td>
+        </tr>
+        <tr>
+            <td id="casilla4">Mira el Palantir</td>
+            <td id="casilla3">2</td>
+            <td id="casilla2">Eventos</td>
+            <td id="casilla1">1</td>
+            <td id="casilla0">Salida</td>
+        </tr>
     </table>
 </div>
 
 <div id="dado">Tira!</div>
+
+<div style="clear: both"></div>
+<div id="infoPartida">
+    
+</div>
 
 {% endblock %}

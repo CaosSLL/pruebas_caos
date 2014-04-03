@@ -77,46 +77,53 @@ class __TwigTemplate_90ca8828ed32c6c7ec10e2b06f614cd6daca3c570a8b8d29cd6ab8b8474
 <div id=\"ficha\"></div>
 
 <div id=\"tablero\">
-    <table border=\"1\">
+    ";
+        // line 61
+        echo "    <table>
         <tr>
-            <td>Salida</td>
-            <td>1</td>
-            <td>Eventos</td>
-            <td>2</td>
-            <td>Mira el Palantir</td>
+            <td id=\"casilla8\">5</td>
+            <td id=\"casilla9\">6</td>
+            <td id=\"casilla10\">Personajes</td>
+            <td id=\"casilla11\">7</td>
+            <td id=\"casilla12\">8</td>
         </tr>
         <tr>
-            <td>3</td>
-            <td>4</td>
-            <td>Personajes</td>
-            <td>5</td>
-            <td>6</td>
+            <td id=\"casilla7\">Mazmorra</td>
+            ";
+        // line 74
+        echo "            <td colspan=\"3\"></td>
+            <td id=\"casilla13\">9</td>
         </tr>
         <tr>
-            <td>Mazmorra</td>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-            <td>10</td>
+            <td id=\"casilla6\">4</td>
+            ";
+        // line 82
+        echo "            <td colspan=\"3\"></td>
+            <td id=\"casilla14\">10</td>
         </tr>
         <tr>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-            <td>15</td>
+            <td id=\"casilla5\">3</td>
+            ";
+        // line 90
+        echo "            <td colspan=\"3\"></td>
+            <td id=\"casilla15\">11</td>
         </tr>
         <tr>
-            <td>16</td>
-            <td>17</td>
-            <td>18</td>
-            <td>19</td>
-            <td>20</td>
+            <td id=\"casilla4\">Mira el Palantir</td>
+            <td id=\"casilla3\">2</td>
+            <td id=\"casilla2\">Eventos</td>
+            <td id=\"casilla1\">1</td>
+            <td id=\"casilla0\">Salida</td>
         </tr>
     </table>
 </div>
 
 <div id=\"dado\">Tira!</div>
+
+<div style=\"clear: both\"></div>
+<div id=\"infoPartida\">
+    
+</div>
 
 ";
     }
@@ -133,6 +140,6 @@ class __TwigTemplate_90ca8828ed32c6c7ec10e2b06f614cd6daca3c570a8b8d29cd6ab8b8474
 
     public function getDebugInfo()
     {
-        return array (  71 => 18,  67 => 16,  64 => 15,  58 => 12,  54 => 11,  50 => 10,  47 => 9,  40 => 6,  37 => 5,  31 => 3,);
+        return array (  108 => 90,  101 => 82,  94 => 74,  82 => 61,  71 => 18,  67 => 16,  64 => 15,  58 => 12,  54 => 11,  50 => 10,  47 => 9,  40 => 6,  37 => 5,  31 => 3,);
     }
 }
