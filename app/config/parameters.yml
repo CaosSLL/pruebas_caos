@@ -6,6 +6,10 @@ parameters:
     database_name: caos_bdmtm
     database_user: root
     database_password: 
+#    database_host: mysql.hostinger.es
+#    database_name: u859447165_bdmtm
+#    database_user: u859447165_caos
+#    database_password: supercaos
     mailer_transport: smtp
     mailer_host: 127.0.0.1
     mailer_user: null

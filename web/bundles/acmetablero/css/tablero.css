@@ -1,12 +1,21 @@
 
 .casilla {
-    width: 100px;
-    height: 100px;
+    width: 15%;
+    height: 130px;
     border: solid 1px;
+    background-color: cornflowerblue;
 }
 
 #tablero {
-    float: left;
+    /* float: left; */
+    position: absolute;
+    width: 100%;
+}
+
+#tablero table {
+    position: relative;
+    
+    width: 100%;
 }
 
 #ficha {
@@ -16,20 +25,24 @@
     background-color: red;
     position: absolute;
     opacity: 0.5;
+    z-index: 100;
 }
 
 #dado {
-    width: 67px;
+    width: 13%;
     height: 44px;
     border-radius: 32px;
     background-color: #fcecc1;
     text-align: center;
     padding: 31px;
     margin: 30px;
-    float: left;
+    /* float: left; */
     box-shadow: 5px 5px 5px #48412f;
     font-size: 2em;
     font-weight: bold;
+    position: absolute;
+    top: 38%;
+    left: 40%;
 }
 
 #dado:hover {
@@ -41,4 +54,10 @@
     margin-top: 35px;
     margin-left: 35px;
     box-shadow: none;
+}
+
+#infoPartida {
+    position: relative;
+    
+    margin-bottom: 22px;
 }

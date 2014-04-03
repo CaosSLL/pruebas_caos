@@ -16,48 +16,12 @@
 
 <h3>Esto es el tablero...</h3>
 <h4>Hola {{ jugador.getNombre }} digooo {{ jugador.getPersonaje }}</h4>
+<div id="infoPartida"></div>
 
 
-<div id="ficha"></div>
 
 <div id="tablero">
-    {#<t#able border="1">
-        <tr>
-            <td>Salida</td>
-            <td>1</td>
-            <td>Eventos</td>
-            <td>2</td>
-            <td>Mira el Palantir</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>4</td>
-            <td>Personajes</td>
-            <td>5</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td>Mazmorra</td>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-            <td>15</td>
-        </tr>
-        <tr>
-            <td>16</td>
-            <td>17</td>
-            <td>18</td>
-            <td>19</td>
-            <td>20</td>
-        </tr>
-    </table>#}
+<div id="ficha"></div>
     <table>
         <tr>
             <td id="casilla8">5</td>
@@ -98,13 +62,10 @@
             <td id="casilla0">Salida</td>
         </tr>
     </table>
-</div>
-
 <div id="dado">Tira!</div>
-
-<div style="clear: both"></div>
-<div id="infoPartida">
-    
 </div>
+
+
+{#<div style="clear: both"></div>#}
 
 {% endblock %}

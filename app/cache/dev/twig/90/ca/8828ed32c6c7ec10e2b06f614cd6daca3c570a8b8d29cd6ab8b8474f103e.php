@@ -72,14 +72,13 @@ class __TwigTemplate_90ca8828ed32c6c7ec10e2b06f614cd6daca3c570a8b8d29cd6ab8b8474
         echo " digooo ";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["jugador"]) ? $context["jugador"] : $this->getContext($context, "jugador")), "getPersonaje"), "html", null, true);
         echo "</h4>
+<div id=\"infoPartida\"></div>
 
 
-<div id=\"ficha\"></div>
 
 <div id=\"tablero\">
-    ";
-        // line 61
-        echo "    <table>
+<div id=\"ficha\"></div>
+    <table>
         <tr>
             <td id=\"casilla8\">5</td>
             <td id=\"casilla9\">6</td>
@@ -90,21 +89,21 @@ class __TwigTemplate_90ca8828ed32c6c7ec10e2b06f614cd6daca3c570a8b8d29cd6ab8b8474
         <tr>
             <td id=\"casilla7\">Mazmorra</td>
             ";
-        // line 74
+        // line 38
         echo "            <td colspan=\"3\"></td>
             <td id=\"casilla13\">9</td>
         </tr>
         <tr>
             <td id=\"casilla6\">4</td>
             ";
-        // line 82
+        // line 46
         echo "            <td colspan=\"3\"></td>
             <td id=\"casilla14\">10</td>
         </tr>
         <tr>
             <td id=\"casilla5\">3</td>
             ";
-        // line 90
+        // line 54
         echo "            <td colspan=\"3\"></td>
             <td id=\"casilla15\">11</td>
         </tr>
@@ -116,15 +115,13 @@ class __TwigTemplate_90ca8828ed32c6c7ec10e2b06f614cd6daca3c570a8b8d29cd6ab8b8474
             <td id=\"casilla0\">Salida</td>
         </tr>
     </table>
-</div>
-
 <div id=\"dado\">Tira!</div>
-
-<div style=\"clear: both\"></div>
-<div id=\"infoPartida\">
-    
 </div>
 
+
+";
+        // line 70
+        echo "
 ";
     }
 
@@ -140,6 +137,6 @@ class __TwigTemplate_90ca8828ed32c6c7ec10e2b06f614cd6daca3c570a8b8d29cd6ab8b8474
 
     public function getDebugInfo()
     {
-        return array (  108 => 90,  101 => 82,  94 => 74,  82 => 61,  71 => 18,  67 => 16,  64 => 15,  58 => 12,  54 => 11,  50 => 10,  47 => 9,  40 => 6,  37 => 5,  31 => 3,);
+        return array (  124 => 70,  107 => 54,  100 => 46,  93 => 38,  71 => 18,  67 => 16,  64 => 15,  58 => 12,  54 => 11,  50 => 10,  47 => 9,  40 => 6,  37 => 5,  31 => 3,);
     }
 }
