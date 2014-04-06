@@ -1,14 +1,19 @@
 
 .casilla {
-    width: 15%;
-    height: 130px;
+    width: 120px;
+    height: 140px;
     border: solid 1px;
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
+}
+
+.casilla img {
+    width: 100%;
+    height: 100%;
 }
 
 #tablero {
     /* float: left; */
-    position: absolute;
+    position: relative;
     width: 100%;
 }
 
@@ -16,21 +21,31 @@
     position: relative;
     
     width: 100%;
+    border-collapse: collapse;
 }
 
-#ficha {
-    width: 70px;
-    height: 70px;
+.ficha {
+    width: 87px;
+    height: 57px;
     border-radius: 45px;
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
-    opacity: 0.5;
-    z-index: 100;
+    /* opacity: 0.8; */
+    z-index: 10;
+    margin-top: 28px;
+    margin-left: 7%;
+}
+
+#ficha2 {
+    margin-left: 10px;
+    
+    width: 60px;
+    margin-top: 0px;
 }
 
 #dado {
-    width: 13%;
-    height: 44px;
+    width: 120px;
+    height: 40px;
     border-radius: 32px;
     background-color: #fcecc1;
     text-align: center;

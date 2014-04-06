@@ -43,9 +43,12 @@ class Partida
     private $bote;
 
     /**
-     * @var integer
+     * @var \Jugador
      *
-     * @ORM\Column(name="turno_jugador", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Jugador")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="turno_jugador", referencedColumnName="id")
+     * })
      */
     private $turnoJugador;
 
@@ -133,10 +136,10 @@ class Partida
     /**
      * Set turnoJugador
      *
-     * @param integer $turnoJugador
+     * @param \Acme\TableroBundle\Entity\Jugador $turnoJugador
      * @return Partida
      */
-    public function setTurnoJugador($turnoJugador)
+    public function setTurnoJugador(\Acme\TableroBundle\Entity\Jugador $turnoJugador = null)
     {
         $this->turnoJugador = $turnoJugador;
 
@@ -146,7 +149,7 @@ class Partida
     /**
      * Get turnoJugador
      *
-     * @return integer 
+     * @return \Acme\TableroBundle\Entity\Jugador 
      */
     public function getTurnoJugador()
     {

@@ -1,0 +1,43 @@
+UsuParJug:
+    type: entity
+    table: usu_par_jug
+    indexes:
+        id_partida:
+            columns:
+                - id_partida
+        id_jugador:
+            columns:
+                - id_jugador
+        IDX_34DC8107FCF8192D:
+            columns:
+                - id_usuario
+    id: {  }
+    oneToOne:
+        idJugador:
+            targetEntity: Jugador
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_jugador:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idUsuario:
+            targetEntity: Usuario
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_usuario:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idPartida:
+            targetEntity: Partida
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_partida:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

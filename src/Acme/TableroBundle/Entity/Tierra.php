@@ -38,21 +38,24 @@ class Tierra
     /**
      * @var integer
      *
-     * @ORM\Column(name="cabanas", type="integer", nullable=false)
+     * @ORM\Column(name="cabanas", type="integer", nullable=true)
      */
     private $cabanas;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="castillos", type="integer", nullable=false)
+     * @ORM\Column(name="castillos", type="integer", nullable=true)
      */
     private $castillos;
-    
+
     /**
-     * @var integer
+     * @var \Jugador
      *
-     * @ORM\Column(name="id_jugador", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Jugador")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_jugador", referencedColumnName="id")
+     * })
      */
     private $idJugador;
 
@@ -118,7 +121,7 @@ class Tierra
      * Set cabanas
      *
      * @param integer $cabanas
-     * @return Propiedad
+     * @return Tierra
      */
     public function setCabanas($cabanas)
     {
@@ -141,7 +144,7 @@ class Tierra
      * Set castillos
      *
      * @param integer $castillos
-     * @return Propiedad
+     * @return Tierra
      */
     public function setCastillos($castillos)
     {
@@ -159,14 +162,14 @@ class Tierra
     {
         return $this->castillos;
     }
-    
+
     /**
      * Set idJugador
      *
-     * @param integer $idJugador
+     * @param \Acme\TableroBundle\Entity\Jugador $idJugador
      * @return Tierra
      */
-    public function setIdJugador($idJugador)
+    public function setIdJugador(\Acme\TableroBundle\Entity\Jugador $idJugador = null)
     {
         $this->idJugador = $idJugador;
 
@@ -176,7 +179,7 @@ class Tierra
     /**
      * Get idJugador
      *
-     * @return integer 
+     * @return \Acme\TableroBundle\Entity\Jugador 
      */
     public function getIdJugador()
     {

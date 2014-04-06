@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Propiedad
  *
- * @ORM\Table(name="propiedad", indexes={@ORM\Index(name="id_jugador", columns={"id_jugador"})})
+ * @ORM\Table(name="propiedad", indexes={@ORM\Index(name="id_jugador", columns={"id_jugador"}), @ORM\Index(name="casilla", columns={"casilla"})})
  * @ORM\Entity
  */
 class Propiedad
@@ -36,9 +36,12 @@ class Propiedad
     private $nombre;
 
     /**
-     * @var integer
+     * @var \Jugador
      *
-     * @ORM\Column(name="id_jugador", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Jugador")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_jugador", referencedColumnName="id")
+     * })
      */
     private $idJugador;
 
@@ -103,10 +106,10 @@ class Propiedad
     /**
      * Set idJugador
      *
-     * @param integer $idJugador
+     * @param \Acme\TableroBundle\Entity\Jugador $idJugador
      * @return Propiedad
      */
-    public function setIdJugador($idJugador)
+    public function setIdJugador(\Acme\TableroBundle\Entity\Jugador $idJugador = null)
     {
         $this->idJugador = $idJugador;
 
@@ -116,7 +119,7 @@ class Propiedad
     /**
      * Get idJugador
      *
-     * @return integer 
+     * @return \Acme\TableroBundle\Entity\Jugador 
      */
     public function getIdJugador()
     {

@@ -2,7 +2,7 @@ var numCasillas = 16;
 var casillaActual = 0;
 var avance = 1;
 var dado = $("#dado");
-var ficha = $("#ficha");
+var ficha = $(".ficha");
 var datosCasilla = null;
 
 // Información de la partida

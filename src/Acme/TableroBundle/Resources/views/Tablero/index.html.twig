@@ -1,8 +1,34 @@
 {% extends "::base.html.twig" %}
 
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
 {% block body %}
 
-<h3>Esto es el index...</h3>
-<a href="{{ url("acme_tablero") }}">Ir al tablero</a>
+<div class="opciones">
+    <ul>
+        <li class="opcion">
+            <a id="logearse" href="#">Iniciar partida</a>
+        </li>
+        <li class="opcion">
+            <a href="{{ url("acme_tablero",{"id_partida":0}) }}">Iniciar partida rapida y anónima</a>
+        </li>
+        <li class="opcion">
+            <a href="{{ url("acme_usuario_registrar") }}">Registrarte</a>
+        </li>
+    </ul>
+</div>
+
+<div class="dialog_logearse" title="Logeate!" style="display: none;">
+    <form name="formulario_login" action="{{ path('login_check') }}" method="post">
+        <label for="username">Usuario:</label>
+        <input id="username" type="text" name="_username" />
+        <label for="password">Contraseña:</label>
+        <input id="password" type="password" name="_password" /> 
+        <input type="hidden" name="_target_path" value="/listaPartidas">
+{#        <input type="submit" name="login" />#}
+    </form>
+</div>
 
 {% endblock %}

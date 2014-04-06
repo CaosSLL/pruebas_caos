@@ -144,20 +144,98 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Acme\\TableroBundle\\Controller\\TableroController::indexAction',  '_route' => 'acme_tablero_homepage',);
         }
 
-        // acme_tablero
-        if ($pathinfo === '/tablero') {
-            return array (  '_controller' => 'Acme\\TableroBundle\\Controller\\TableroController::mostrarTableroAction',  '_route' => 'acme_tablero',);
-        }
-
-        if (0 === strpos($pathinfo, '/casilla')) {
-            // acme_casilla
-            if (preg_match('#^/casilla/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_casilla')), array (  '_controller' => 'Acme\\TableroBundle\\Controller\\TableroController::datosCasillaAction',));
+        if (0 === strpos($pathinfo, '/tablero')) {
+            // acme_tablero
+            if (preg_match('#^/tablero/(?P<id_partida>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_tablero')), array (  '_controller' => 'Acme\\TableroBundle\\Controller\\TableroController::mostrarTableroAction',));
             }
 
             // acme_casillaJSON
-            if (0 === strpos($pathinfo, '/casillaJSON') && preg_match('#^/casillaJSON/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/tablero/casillaJSON') && preg_match('#^/tablero/casillaJSON/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_casillaJSON')), array (  '_controller' => 'Acme\\TableroBundle\\Controller\\TableroController::datosCasillaJSONAction',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/usuarios')) {
+            // acme_usuario
+            if ($pathinfo === '/usuarios') {
+                return array (  '_controller' => 'Acme\\TableroBundle\\Controller\\UsuarioController::indexAction',  '_route' => 'acme_usuario',);
+            }
+
+            if (0 === strpos($pathinfo, '/usuarios/mo')) {
+                // acme_usuario_show
+                if (0 === strpos($pathinfo, '/usuarios/mostrar') && preg_match('#^/usuarios/mostrar/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_usuario_show')), array (  '_controller' => 'Acme\\TableroBundle\\Controller\\UsuarioController::showAction',));
+                }
+
+                // acme_usuario_edit
+                if (0 === strpos($pathinfo, '/usuarios/modificar') && preg_match('#^/usuarios/modificar/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_usuario_edit')), array (  '_controller' => 'Acme\\TableroBundle\\Controller\\UsuarioController::editAction',));
+                }
+
+            }
+
+            // acme_usuario_new
+            if ($pathinfo === '/usuarios/nuevo') {
+                return array (  '_controller' => 'Acme\\TableroBundle\\Controller\\UsuarioController::newAction',  '_route' => 'acme_usuario_new',);
+            }
+
+            // acme_usuario_registrar
+            if ($pathinfo === '/usuarios/registrar') {
+                return array (  '_controller' => 'Acme\\TableroBundle\\Controller\\UsuarioController::registrarAction',  '_route' => 'acme_usuario_registrar',);
+            }
+
+            // acme_usuario_create
+            if ($pathinfo === '/usuarios/crear') {
+                return array (  '_controller' => 'Acme\\TableroBundle\\Controller\\UsuarioController::createAction',  '_route' => 'acme_usuario_create',);
+            }
+
+            // acme_usuario_update
+            if (0 === strpos($pathinfo, '/usuarios/actualizar') && preg_match('#^/usuarios/actualizar/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_usuario_update')), array (  '_controller' => 'Acme\\TableroBundle\\Controller\\UsuarioController::updateAction',));
+            }
+
+            // acme_usuario_delete
+            if (0 === strpos($pathinfo, '/usuarios/eliminar') && preg_match('#^/usuarios/eliminar/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_usuario_delete')), array (  '_controller' => 'Acme\\TableroBundle\\Controller\\UsuarioController::deleteAction',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/l')) {
+            if (0 === strpos($pathinfo, '/lista')) {
+                // acme_lista_partidas
+                if ($pathinfo === '/listaPartidas') {
+                    return array (  '_controller' => 'Acme\\TableroBundle\\Controller\\UsuarioController::listaPartidasAction',  '_route' => 'acme_lista_partidas',);
+                }
+
+                // acme_lista_usuarios
+                if (0 === strpos($pathinfo, '/listaUsuarios') && preg_match('#^/listaUsuarios/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'acme_lista_usuarios')), array (  '_controller' => 'Acme\\TableroBundle\\Controller\\UsuarioController::listaUsuariosPartidaAction',));
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/log')) {
+                if (0 === strpos($pathinfo, '/login')) {
+                    // login
+                    if ($pathinfo === '/login') {
+                        return array (  '_controller' => 'Acme\\TableroBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+                    }
+
+                    // login_check
+                    if ($pathinfo === '/login_check') {
+                        return array('_route' => 'login_check');
+                    }
+
+                }
+
+                // logout
+                if ($pathinfo === '/logout') {
+                    return array('_route' => 'logout');
+                }
+
             }
 
         }

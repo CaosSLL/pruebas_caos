@@ -43,9 +43,12 @@ class TarjetaEvento
     private $penalizacion;
 
     /**
-     * @var integer
+     * @var \Jugador
      *
-     * @ORM\Column(name="id_jugador", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Jugador")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_jugador", referencedColumnName="id")
+     * })
      */
     private $idJugador;
 
@@ -133,10 +136,10 @@ class TarjetaEvento
     /**
      * Set idJugador
      *
-     * @param integer $idJugador
+     * @param \Acme\TableroBundle\Entity\Jugador $idJugador
      * @return TarjetaEvento
      */
-    public function setIdJugador($idJugador)
+    public function setIdJugador(\Acme\TableroBundle\Entity\Jugador $idJugador = null)
     {
         $this->idJugador = $idJugador;
 
@@ -146,7 +149,7 @@ class TarjetaEvento
     /**
      * Get idJugador
      *
-     * @return integer 
+     * @return \Acme\TableroBundle\Entity\Jugador 
      */
     public function getIdJugador()
     {

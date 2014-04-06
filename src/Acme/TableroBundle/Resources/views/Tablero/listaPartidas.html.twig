@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<h1>Bienvenido: {{ datos[0].getUsuario.username }}!</h1>
+
+<div class="listado_partidas">
+    <ul>
+    {% for partida in datos %}
+        <li>
+            <div class="partida" id="{{partida.getPartida.getId}}" onclick="cargarUsuarios({{partida.getPartida.getId}})">
+                <a href="{{ url("acme_tablero",{"id_partida": partida.getPartida.getId }) }}">{{ partida.getPartida.getFecha|date("d/m/Y") }} - {{ partida.getJugador.getPersonaje }}</a>
+                <div class="usuarios" id="usuarios{{partida.getPartida.getId}}"></div>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+
+<script type="text/javascript">
+
+    function cargarUsuarios(id) {
+{#        $("#usuarios"+id).load("http://localhost/Caos/app_dev.php/listaUsuarios/"+id);#}
+        $("#usuarios" + id).load("{{ url("acme_lista_usuarios",{"id":0 }) }}" + id, null, function() {
+            $("#usuarios" + id).prepend("Usuarios de la partida:");
+        });
+    }
+
+</script>
+{% endblock %}

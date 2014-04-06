@@ -3,13 +3,49 @@ acme_tablero_homepage:
     defaults: { _controller: AcmeTableroBundle:Tablero:index }
     
 acme_tablero:
-    pattern:  /tablero
+    pattern:  /tablero/{id_partida}
     defaults: { _controller: AcmeTableroBundle:Tablero:mostrarTablero }
     
-acme_casilla:
-    pattern:  /casilla/{id}
-    defaults: { _controller: AcmeTableroBundle:Tablero:datosCasilla }
-
 acme_casillaJSON:
-    pattern:  /casillaJSON/{id}
+    pattern:  tablero/casillaJSON/{id}
     defaults: { _controller: AcmeTableroBundle:Tablero:datosCasillaJSON }
+
+acme_usuario:
+    pattern: /usuarios
+    defaults: { _controller: AcmeTableroBundle:Usuario:index }
+    
+acme_usuario_show:
+    pattern: /usuarios/mostrar/{id}
+    defaults: { _controller: AcmeTableroBundle:Usuario:show }
+    
+acme_usuario_edit:
+    pattern: /usuarios/modificar/{id}
+    defaults: { _controller: AcmeTableroBundle:Usuario:edit }
+    
+acme_usuario_new:
+    pattern: /usuarios/nuevo
+    defaults: { _controller: AcmeTableroBundle:Usuario:new }
+
+acme_usuario_registrar:
+    pattern: /usuarios/registrar
+    defaults: { _controller: AcmeTableroBundle:Usuario:registrar }
+    
+acme_usuario_create:
+    pattern: /usuarios/crear
+    defaults: { _controller: AcmeTableroBundle:Usuario:create }
+    
+acme_usuario_update:
+    pattern: /usuarios/actualizar/{id}
+    defaults: { _controller: AcmeTableroBundle:Usuario:update }
+    
+acme_usuario_delete:
+    pattern: /usuarios/eliminar/{id}
+    defaults: { _controller: AcmeTableroBundle:Usuario:delete }
+    
+acme_lista_partidas:
+    pattern: /listaPartidas
+    defaults: { _controller: AcmeTableroBundle:Usuario:listaPartidas }
+
+acme_lista_usuarios:
+    pattern: /listaUsuarios/{id}
+    defaults: { _controller: AcmeTableroBundle:Usuario:listaUsuariosPartida }

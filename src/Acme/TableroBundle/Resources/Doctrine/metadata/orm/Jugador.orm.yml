@@ -1,0 +1,37 @@
+Jugador:
+    type: entity
+    table: jugador
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+        personaje:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+        dinero:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+        casillaActual:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: casilla_actual
+    lifecycleCallbacks: {  }

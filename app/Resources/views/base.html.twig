@@ -2,13 +2,35 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Monopoly de El Señor de los Anillos{% endblock %}</title>
+        {% block stylesheets %}
+        <link type="text/css" rel="stylesheet" href="{{ asset("bundles/acmetablero/css/jqueryui/base/jquery-ui.css") }}" />
+        <link type="text/css" rel="stylesheet" href="{{ asset("bundles/acmetablero/css/principal.css") }}" />
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        <h1>Hola!</h1>
+        <header>
+            <h1>Monopoly de <span>El Señor de los Anillos</span></h1>
+        </header>
+
         {% block body %}{% endblock %}
-        {% block javascripts %}<script type="text/javascript" src="{{ asset('bundles/acmetablero/js/jquery.js') }}"></script>{% endblock %}
+
+        <div class="panel_usuario">
+            <div class="usuario">
+            {% if app.user %}
+                <span class="nombre_usuario">Usuario: {{ app.user.username }}</span><br>
+                <button class="boton_salir"><a href="{{ url("logout") }}" style="text-decoration: none; color: #000000;">Salir</a></button>
+            {% else %}
+                <span class="nombre_usuario">Usuario: Anónimo</span><br>
+            {% endif %}
+            </div>
+        </div>
+        
+        {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('bundles/acmetablero/js/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmetablero/js/jquery-ui.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/acmetablero/js/principal.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
