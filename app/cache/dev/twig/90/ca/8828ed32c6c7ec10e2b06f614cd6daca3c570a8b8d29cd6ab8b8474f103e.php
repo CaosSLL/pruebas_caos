@@ -95,41 +95,79 @@ class __TwigTemplate_90ca8828ed32c6c7ec10e2b06f614cd6daca3c570a8b8d29cd6ab8b8474
     ";
         // line 33
         echo "    <table>
+    <tbody>
         <tr>
-            <td id=\"casilla8\">5</td>
-            <td id=\"casilla9\">6</td>
-            <td id=\"casilla10\">Personajes</td>
-            <td id=\"casilla11\">7</td>
-            <td id=\"casilla12\">8</td>
+            <td id=\"casilla20\">20</td>
+            <td id=\"casilla21\">21</td>
+            <td id=\"casilla22\">22</td>
+            <td id=\"casilla23\">23</td>
+            <td id=\"casilla24\">24</td>
+            <td id=\"casilla25\">25</td>
+            <td id=\"casilla26\">26</td>
+            <td id=\"casilla27\">27</td>
+            <td id=\"casilla28\">28</td>
+            <td id=\"casilla29\">29</td>
+            <td id=\"casilla30\">30</td>
         </tr>
         <tr>
-            <td id=\"casilla7\">Mazmorra</td>
-            <td colspan=\"3\"></td>
-            <td id=\"casilla13\">9</td>
+            <td id=\"casilla19\">19</td>
+            <td colspan=\"9\"></td>
+            <td id=\"casilla31\">31</td>
         </tr>
         <tr>
-            <td id=\"casilla6\">4</td>
-            <td colspan=\"3\"></td>
-            <td id=\"casilla14\">10</td>
+            <td id=\"casilla18\">18</td>
+            <td colspan=\"9\"></td>
+            <td id=\"casilla32\">32</td>
         </tr>
         <tr>
-            <td id=\"casilla5\">3</td>
-            <td colspan=\"3\"></td>
-            <td id=\"casilla15\">11</td>
+            <td id=\"casilla17\">17</td>
+            <td colspan=\"9\"></td>
+            <td id=\"casilla33\">33</td>
         </tr>
         <tr>
-            <td id=\"casilla4\">Mira el Palantir</td>
-            <td id=\"casilla3\">2</td>
-            <td id=\"casilla2\">Eventos</td>
-            <td id=\"casilla1\">
-";
-        // line 62
-        echo "                <img src=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/acmetablero/images/casilla1.png"), "html", null, true);
-        echo "\">
-            </td>
-            <td id=\"casilla0\">Salida</td>
+            <td id=\"casilla16\">16</td>
+            <td colspan=\"9\"></td>
+            <td id=\"casilla34\">34</td>
         </tr>
+        <tr>
+            <td id=\"casilla15\">15</td>
+            <td colspan=\"9\"></td>
+            <td id=\"casilla35\">35</td>
+        </tr>
+        <tr>
+            <td id=\"casilla14\">14</td>
+            <td colspan=\"9\"></td>
+            <td id=\"casilla36\">36</td>
+        </tr>
+        <tr>
+            <td id=\"casilla13\">13</td>
+            <td colspan=\"9\"></td>
+            <td id=\"casilla37\">37</td>
+        </tr>
+        <tr>
+            <td id=\"casilla12\">12</td>
+            <td colspan=\"9\"></td>
+            <td id=\"casilla38\">38</td>
+        </tr>
+        <tr>
+            <td id=\"casilla11\">11</td>
+            <td colspan=\"9\"></td>
+            <td id=\"casilla39\">39</td>
+        </tr>
+        <tr>
+            <td id=\"casilla10\">10</td>
+            <td id=\"casilla9\">9</td>
+            <td id=\"casilla8\">8</td>
+            <td id=\"casilla7\">7</td>
+            <td id=\"casilla6\">6</td>
+            <td id=\"casilla5\">5</td>
+            <td id=\"casilla4\">4</td>
+            <td id=\"casilla3\">3</td>
+            <td id=\"casilla2\">2</td>
+            <td id=\"casilla1\">1</td>
+            <td id=\"casilla0\">0</td>
+        </tr>
+    </tbody>
     </table>
     <div id=\"dado\">Tira!</div>
 </div>
@@ -151,6 +189,6 @@ class __TwigTemplate_90ca8828ed32c6c7ec10e2b06f614cd6daca3c570a8b8d29cd6ab8b8474
 
     public function getDebugInfo()
     {
-        return array (  127 => 62,  97 => 33,  92 => 28,  83 => 21,  75 => 19,  73 => 18,  70 => 17,  67 => 16,  61 => 13,  57 => 12,  53 => 11,  50 => 10,  44 => 7,  40 => 6,  37 => 5,  31 => 3,);
+        return array (  97 => 33,  92 => 28,  83 => 21,  75 => 19,  73 => 18,  70 => 17,  67 => 16,  61 => 13,  57 => 12,  53 => 11,  50 => 10,  44 => 7,  40 => 6,  37 => 5,  31 => 3,);
     }
 }

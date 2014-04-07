@@ -9,15 +9,15 @@
 {% endblock %}
 
 {% block body %}
-<h1>Bienvenido: {{ datos[0].getUsuario.username }}!</h1>
+<h1>Bienvenido: {{ usuario.username }}!</h1>
 
 <div class="listado_partidas">
     <ul>
-    {% for partida in datos %}
+    {% for partida in partidas %}
         <li>
-            <div class="partida" id="{{partida.getPartida.getId}}" onclick="cargarUsuarios({{partida.getPartida.getId}})">
-                <a href="{{ url("acme_tablero",{"id_partida": partida.getPartida.getId }) }}">{{ partida.getPartida.getFecha|date("d/m/Y") }} - {{ partida.getJugador.getPersonaje }}</a>
-                <div class="usuarios" id="usuarios{{partida.getPartida.getId}}"></div>
+            <div class="partida" onclick="cargarUsuarios({{partida.partida.getId}});">
+                <span>{{ partida.partida.getFecha|date("j - F - Y") }}</span>
+                <div class="usuarios" id="usuarios{{partida.partida.getId}}"></div>
             </div>
         </li>
     {% endfor %}
@@ -27,10 +27,16 @@
 <script type="text/javascript">
 
     function cargarUsuarios(id) {
-{#        $("#usuarios"+id).load("http://localhost/Caos/app_dev.php/listaUsuarios/"+id);#}
-        $("#usuarios" + id).load("{{ url("acme_lista_usuarios",{"id":0 }) }}" + id, null, function() {
-            $("#usuarios" + id).prepend("Usuarios de la partida:");
-        });
+        var div = "#usuarios" + id;
+        if ($(div).text() === "") {
+            $(div).load("{{ url("acme_lista_usuarios",{"id":0 }) }}" + id, null, function() {
+                $(div).prepend("<h3>Usuarios de la partida:</h3>");
+                var url = "{{ url("acme_tablero",{"id_partida":0  }) }}" + id;
+                $(div).append("<a href="+url+">Ir a la partida</a>");
+            });
+        } else {
+            $(div).slideToggle()();
+        } 
     }
 
 </script>

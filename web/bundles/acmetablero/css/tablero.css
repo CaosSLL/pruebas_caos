@@ -1,7 +1,7 @@
 
 .casilla {
-    width: 120px;
-    height: 140px;
+    width: 170px;
+    height: 190px;
     border: solid 1px;
     /* background-color: cornflowerblue; */
 }
@@ -24,6 +24,11 @@
     border-collapse: collapse;
 }
 
+#tablero tbody td {
+    border-collapse: collapse;
+    padding: 0px;
+}
+
 .ficha {
     width: 87px;
     height: 57px;
@@ -32,8 +37,8 @@
     position: absolute;
     /* opacity: 0.8; */
     z-index: 10;
-    margin-top: 28px;
-    margin-left: 7%;
+    margin-top: 50px;
+    margin-left: 0%;
 }
 
 #ficha2 {

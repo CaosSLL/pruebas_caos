@@ -1,4 +1,4 @@
-var numCasillas = 16;
+var numCasillas = 40;
 var casillaActual = 0;
 var avance = 1;
 var dado = $("#dado");
@@ -14,10 +14,11 @@ $(document).ready(function() {
 
     // Como soy muy vago... añado dinamicamente la clase "casilla" a las celdas que tienen
     // un identificador...
-    $("table td").each(function(i) {
-//        $(this).attr("id", "casilla" + i);
+    $("table td").each(function() {
         if ($(this).attr("id")) {
-            $(this).addClass("casilla");
+            $(this).text("");
+            var img = "<img src='/Caos/bundles/acmetablero/images/"+$(this).attr("id")+".png' >";
+            $(this).prepend("<div class='casilla'>"+img+"</div>");
         }
     });
 
@@ -79,7 +80,7 @@ function obtenerDatosCasilla() {
 function guardarInfoPartida() {
     tiradas++;
     casillasAvanzadas += avance;
-    vueltas = parseInt(casillasAvanzadas / 16);
+    vueltas = parseInt(casillasAvanzadas / numCasillas);
 
     $("#infoPartida").text("Casillas avanzadas: " + casillasAvanzadas + "\nTiradas: " + tiradas + "\nVueltas: " + vueltas);
 

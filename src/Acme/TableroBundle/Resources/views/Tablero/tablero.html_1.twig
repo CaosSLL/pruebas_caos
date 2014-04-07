@@ -1,0 +1,72 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Tablero!{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{ asset('bundles/acmetablero/css/tablero.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript" src="{{ asset('bundles/acmetablero/js/clases.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/acmetablero/js/tablero.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+{% if(datos.getUsuario != null) %}
+    <h4>Hola {{ datos.getUsuario.getUsername }} digooo {{ datos.getJugador.getPersonaje }}</h4>
+{% endif %}
+    
+<div id="infoPartida">
+    Información general.
+</div>
+
+<div id="tablero">
+    <div class="ficha">
+        <img src="{{ asset("bundles/acmetablero/images/frodo2.png") }}" style="width: 100%">
+    </div>
+    {#<div class="ficha" id="ficha2" >
+        <img src="{{ asset("bundles/acmetablero/images/frodo.png") }}" style="width: 100%">
+    </div>#}
+    <table>
+        <tr>
+            <td id="casilla8">5</td>
+            <td id="casilla9">6</td>
+            <td id="casilla10">Personajes</td>
+            <td id="casilla11">7</td>
+            <td id="casilla12">8</td>
+        </tr>
+        <tr>
+            <td id="casilla7">Mazmorra</td>
+            <td colspan="3"></td>
+            <td id="casilla13">9</td>
+        </tr>
+        <tr>
+            <td id="casilla6">4</td>
+            <td colspan="3"></td>
+            <td id="casilla14">10</td>
+        </tr>
+        <tr>
+            <td id="casilla5">3</td>
+            <td colspan="3"></td>
+            <td id="casilla15">11</td>
+        </tr>
+        <tr>
+            <td id="casilla4">Mira el Palantir</td>
+            <td id="casilla3">2</td>
+            <td id="casilla2">Eventos</td>
+            <td id="casilla1">
+{#                style="background: url({{ asset("bundles/acmetablero/images/casilla1.png") }})">#}
+                <img src="{{ asset("bundles/acmetablero/images/casilla1.png") }}">
+            </td>
+            <td id="casilla0">Salida</td>
+        </tr>
+    </table>
+    <div id="dado">Tira!</div>
+</div>
+
+<div style="clear: both"></div>
+
+{% endblock %}

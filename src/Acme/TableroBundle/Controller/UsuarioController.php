@@ -283,15 +283,15 @@ class UsuarioController extends Controller {
 
     public function listaPartidasAction() {
         $usuario = $this->get("security.context")->getToken()->getUser();
-        $partida = $this->getDoctrine()->getRepository("AcmeTableroBundle:UsuParJug")
+        $partidas = $this->getDoctrine()->getRepository("AcmeTableroBundle:UsuParJug")
                 ->findPartidasByUsuario($usuario->getId());
-        return $this->render("AcmeTableroBundle:Tablero:listaPartidas.html.twig", array("datos"=>$partida));
+        return $this->render("AcmeTableroBundle:Tablero:listaPartidas.html.twig", array("usuario" => $usuario, "partidas" => $partidas));
     }
 
-    public function listaUsuariosPartidaAction($id){
+    public function listaUsuariosPartidaAction($id) {
         $usuarios = $this->getDoctrine()->getRepository("AcmeTableroBundle:UsuParJug")
                 ->findUsuariosByPartida($id);
         return $this->render("AcmeTableroBundle:Tablero:listaUsuarios.html.twig", array("usuarios" => $usuarios));
     }
-    
+
 }

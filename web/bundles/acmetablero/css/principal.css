@@ -87,3 +87,12 @@ header {
     text-decoration: none;
     color: blue;
 }
+
+.listaUsuarios {
+    width: 100%;
+}
+
+.listaUsuarios th {
+    border-bottom: solid 1px;
+    border-collapse: collapse;
+}

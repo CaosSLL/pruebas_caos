@@ -43,6 +43,7 @@ $(document).ready(function() {
     $("#logearse").click(function() {
         $(".dialog_logearse").dialog("open");
     });
+    
 });
 
 function ocultar() {
