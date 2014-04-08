@@ -87,21 +87,21 @@ class __TwigTemplate_80ad54b4b2d2806c82d5f708607d0cf1e25d09d30d7e0a9b017b6b13cc5
 <script type=\"text/javascript\">
 
     function cargarUsuarios(id) {
-        var div = \"#usuarios\" + id;
-        if (\$(div).text() === \"\") {
-            \$(div).load(\"";
+        var usuario = \"#usuarios\" + id;
+        if (\$(usuario).text() === \"\") {
+            \$(usuario).load(\"";
         // line 32
         echo $this->env->getExtension('routing')->getUrl("acme_lista_usuarios", array("id" => 0));
         echo "\" + id, null, function() {
-                \$(div).prepend(\"<h3>Usuarios de la partida:</h3>\");
+                \$(usuario).prepend(\"<h3>Usuarios de la partida:</h3>\");
                 var url = \"";
         // line 34
         echo $this->env->getExtension('routing')->getUrl("acme_tablero", array("id_partida" => 0));
         echo "\" + id;
-                \$(div).append(\"<a href=\"+url+\">Ir a la partida</a>\");
+                \$(usuario).append(\"<a href=\"+url+\">Ir a la partida</a>\");
             });
         } else {
-            \$(div).slideToggle()();
+            \$(usuario).slideToggle()();
         } 
     }
 

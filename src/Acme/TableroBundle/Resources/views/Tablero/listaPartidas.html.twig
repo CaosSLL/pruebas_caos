@@ -27,15 +27,15 @@
 <script type="text/javascript">
 
     function cargarUsuarios(id) {
-        var div = "#usuarios" + id;
-        if ($(div).text() === "") {
-            $(div).load("{{ url("acme_lista_usuarios",{"id":0 }) }}" + id, null, function() {
-                $(div).prepend("<h3>Usuarios de la partida:</h3>");
+        var usuario = "#usuarios" + id;
+        if ($(usuario).text() === "") {
+            $(usuario).load("{{ url("acme_lista_usuarios",{"id":0 }) }}" + id, null, function() {
+                $(usuario).prepend("<h3>Usuarios de la partida:</h3>");
                 var url = "{{ url("acme_tablero",{"id_partida":0  }) }}" + id;
-                $(div).append("<a href="+url+">Ir a la partida</a>");
+                $(usuario).append("<a href="+url+">Ir a la partida</a>");
             });
         } else {
-            $(div).slideToggle()();
+            $(usuario).slideToggle()();
         } 
     }
 
