@@ -26,16 +26,15 @@ class UsuParJugRepository extends EntityRepository{
         
     }
     
-    public function findDatosPartida($id_usuario, $id_partida){
+    public function findDatosPartida($id_partida){
         
         $query = $this->getEntityManager()->createQueryBuilder()
                 ->select("upj")
                 ->from("AcmeTableroBundle:UsuParJug","upj")
                 ->where("upj.partida = ".$id_partida)
-                ->andWhere("upj.usuario = ".$id_usuario)
                 ->getQuery();
         
-        return $query->getSingleResult();
+        return $query->getResult();
         
     }
     

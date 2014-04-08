@@ -60,19 +60,9 @@ class __TwigTemplate_1a12897b37cf088c97ef3cc5ce1a4736de5c7c4fd7f2461bc23145d956c
 </div>
 
 <div class=\"dialog_logearse\" title=\"Logeate!\" style=\"display: none;\">
-    <form name=\"formulario_login\" action=\"";
-        // line 24
-        echo $this->env->getExtension('routing')->getPath("login_check");
-        echo "\" method=\"post\">
-        <label for=\"username\">Usuario:</label>
-        <input id=\"username\" type=\"text\" name=\"_username\" />
-        <label for=\"password\">Contraseña:</label>
-        <input id=\"password\" type=\"password\" name=\"_password\" /> 
-        <input type=\"hidden\" name=\"_target_path\" value=\"/listaPartidas\">
-";
+    ";
         // line 31
-        echo "    </form>
-</div>
+        echo "</div>
 
 ";
     }
@@ -89,6 +79,6 @@ class __TwigTemplate_1a12897b37cf088c97ef3cc5ce1a4736de5c7c4fd7f2461bc23145d956c
 
     public function getDebugInfo()
     {
-        return array (  74 => 31,  65 => 24,  56 => 18,  50 => 15,  41 => 8,  38 => 7,  32 => 4,  29 => 3,);
+        return array (  65 => 31,  56 => 18,  50 => 15,  41 => 8,  38 => 7,  32 => 4,  29 => 3,);
     }
 }

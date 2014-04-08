@@ -17,15 +17,16 @@ class TableroController extends Controller {
     }
 
     public function mostrarTableroAction($id_partida = 0) {
-        if ($id_partida) {
             $usuario = $this->get("security.context")->getToken()->getUser();
+        if ($id_partida) {
+            
 
             $datos = $this->getDoctrine()->getRepository("AcmeTableroBundle:UsuParJug")
-                    ->findDatosPartida($usuario->getId(),$id_partida);
+                    ->findDatosPartida($id_partida);
         }else{
             $datos = new \Acme\TableroBundle\Entity\UsuParJug();
         }
-        return $this->render("AcmeTableroBundle:Tablero:tablero.html.twig", array("datos" => $datos));
+        return $this->render("AcmeTableroBundle:Tablero:tablero.html.twig", array("usuario"=>$usuario,"datos" => $datos));
     }
 
     public function datosCasillaJSONAction($id) {

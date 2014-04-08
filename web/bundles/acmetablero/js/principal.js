@@ -18,10 +18,15 @@ $(document).ready(function() {
         $(this).animate({width: "50%"});
     });
     
+    
+    $(".dialog_logearse").load("/Caos/app_dev.php/login");
+    
 //  Dialog para logearse
     $(".dialog_logearse").dialog({
         autoOpen: false,
         modal: true,
+        width: "400px",
+//        height: "400px",
         show: {
             effect: "blind",
             duration: 1000

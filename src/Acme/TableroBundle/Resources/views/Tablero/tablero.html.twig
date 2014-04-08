@@ -15,9 +15,14 @@
 
 {% block body %}
 
-{% if(datos.getUsuario != null) %}
-    <h4>Hola {{ datos.getUsuario.getUsername }} tu ficha es: {{ datos.getJugador.getPersonaje }}</h4>
-{% endif %}
+
+{% for dato in datos %}
+    {% if dato.getUsuario.getId == usuario.getId %}
+        <p><b>Bienvenido amo: {{ dato.getUsuario.getUsername }}, tu ficha es: {{ dato.getJugador.getPersonaje }}</b></p>
+    {% else %}
+        <p>Bienvenido: {{ dato.getUsuario.getUsername }}, tu ficha es: {{ dato.getJugador.getPersonaje }}</p>
+    {% endif %}
+{% endfor %}
     
 <div id="infoPartida">
     Información general.

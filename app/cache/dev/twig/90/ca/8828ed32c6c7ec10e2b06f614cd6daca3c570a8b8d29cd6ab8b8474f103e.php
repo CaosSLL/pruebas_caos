@@ -68,18 +68,36 @@ class __TwigTemplate_90ca8828ed32c6c7ec10e2b06f614cd6daca3c570a8b8d29cd6ab8b8474
     {
         // line 17
         echo "
+
 ";
-        // line 18
-        if (($this->getAttribute((isset($context["datos"]) ? $context["datos"] : $this->getContext($context, "datos")), "getUsuario") != null)) {
-            // line 19
-            echo "    <h4>Hola ";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["datos"]) ? $context["datos"] : $this->getContext($context, "datos")), "getUsuario"), "getUsername"), "html", null, true);
-            echo " digooo ";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["datos"]) ? $context["datos"] : $this->getContext($context, "datos")), "getJugador"), "getPersonaje"), "html", null, true);
-            echo "</h4>
-";
+        // line 19
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["datos"]) ? $context["datos"] : $this->getContext($context, "datos")));
+        foreach ($context['_seq'] as $context["_key"] => $context["dato"]) {
+            // line 20
+            echo "    ";
+            if (($this->getAttribute($this->getAttribute((isset($context["dato"]) ? $context["dato"] : $this->getContext($context, "dato")), "getUsuario"), "getId") == $this->getAttribute((isset($context["usuario"]) ? $context["usuario"] : $this->getContext($context, "usuario")), "getId"))) {
+                // line 21
+                echo "        <p><b>Bienvenido amo: ";
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["dato"]) ? $context["dato"] : $this->getContext($context, "dato")), "getUsuario"), "getUsername"), "html", null, true);
+                echo ", tu ficha es: ";
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["dato"]) ? $context["dato"] : $this->getContext($context, "dato")), "getJugador"), "getPersonaje"), "html", null, true);
+                echo "</b></p>
+    ";
+            } else {
+                // line 23
+                echo "        <p>Bienvenido: ";
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["dato"]) ? $context["dato"] : $this->getContext($context, "dato")), "getUsuario"), "getUsername"), "html", null, true);
+                echo ", tu ficha es: ";
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["dato"]) ? $context["dato"] : $this->getContext($context, "dato")), "getJugador"), "getPersonaje"), "html", null, true);
+                echo "</p>
+    ";
+            }
         }
-        // line 21
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dato'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 26
         echo "    
 <div id=\"infoPartida\">
     Información general.
@@ -88,13 +106,12 @@ class __TwigTemplate_90ca8828ed32c6c7ec10e2b06f614cd6daca3c570a8b8d29cd6ab8b8474
 <div id=\"tablero\">
     <div class=\"ficha\">
         <img src=\"";
-        // line 28
+        // line 33
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/acmetablero/images/frodo2.png"), "html", null, true);
         echo "\" style=\"width: 100%\">
     </div>
-    ";
-        // line 33
-        echo "    <table>
+    
+    <table>
     <tbody>
         <tr>
             <td id=\"casilla20\">20</td>
@@ -189,6 +206,6 @@ class __TwigTemplate_90ca8828ed32c6c7ec10e2b06f614cd6daca3c570a8b8d29cd6ab8b8474
 
     public function getDebugInfo()
     {
-        return array (  97 => 33,  92 => 28,  83 => 21,  75 => 19,  73 => 18,  70 => 17,  67 => 16,  61 => 13,  57 => 12,  53 => 11,  50 => 10,  44 => 7,  40 => 6,  37 => 5,  31 => 3,);
+        return array (  110 => 33,  101 => 26,  89 => 23,  81 => 21,  78 => 20,  74 => 19,  70 => 17,  67 => 16,  61 => 13,  57 => 12,  53 => 11,  50 => 10,  44 => 7,  40 => 6,  37 => 5,  31 => 3,);
     }
 }

@@ -285,6 +285,8 @@ class UsuarioController extends Controller {
         $usuario = $this->get("security.context")->getToken()->getUser();
         $partidas = $this->getDoctrine()->getRepository("AcmeTableroBundle:UsuParJug")
                 ->findPartidasByUsuario($usuario->getId());
+//        $partidas = $this->getDoctrine()->getRepository("AcmeTableroBundle:UsuParJug")
+//                ->findAll();
         return $this->render("AcmeTableroBundle:Tablero:listaPartidas.html.twig", array("usuario" => $usuario, "partidas" => $partidas));
     }
 

@@ -15,31 +15,30 @@ class __TwigTemplate_d8f07139df13af6ee48b6159210977825231bed38234c533097466b3506
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 1
+        // line 2
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
-            // line 2
-            echo "<div>";
+            // line 3
+            echo "    <div style=\"color: red;\">Ha habido un error: ";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "message"), "html", null, true);
             echo "</div>
 ";
         }
-        // line 4
-        echo "
-<h1>Introduzca su usuario y contraseña:</h1>
-<form action=\"";
-        // line 6
+        // line 5
+        echo "    <form action=\"";
         echo $this->env->getExtension('routing')->getPath("login_check");
-        echo "\" method=\"post\">
-    <label for=\"username\">Usuario:</label>
-    <input id=\"username\" type=\"text\" name=\"_username\" value=\"";
-        // line 8
+        echo "\" method=\"post\" name=\"formulario_login\">
+        <label for=\"username\">Usuario:</label>
+        <input id=\"username\" type=\"text\" name=\"_username\" value=\"";
+        // line 7
         echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
-        echo "\" />
-    <label for=\"password\">Contraseña:</label>
-    <input id=\"password\" type=\"password\" name=\"_password\" /> <input type=\"submit\" name=\"login\" />
+        echo "\" /><br>
+        <label for=\"password\">Contraseña:</label>
+        <input id=\"password\" type=\"password\" name=\"_password\" /><br> 
 ";
-        // line 12
-        echo "</form>";
+        // line 11
+        echo "        <input type=\"hidden\" name=\"_target_path\" value=\"/listaPartidas\">
+    </form>
+";
     }
 
     public function getTemplateName()
@@ -54,6 +53,6 @@ class __TwigTemplate_d8f07139df13af6ee48b6159210977825231bed38234c533097466b3506
 
     public function getDebugInfo()
     {
-        return array (  42 => 12,  36 => 8,  31 => 6,  27 => 4,  21 => 2,  19 => 1,);
+        return array (  39 => 11,  33 => 7,  27 => 5,  21 => 3,  19 => 2,);
     }
 }

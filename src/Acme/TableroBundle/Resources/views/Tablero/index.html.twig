@@ -21,14 +21,13 @@
 </div>
 
 <div class="dialog_logearse" title="Logeate!" style="display: none;">
-    <form name="formulario_login" action="{{ path('login_check') }}" method="post">
+    {#<form name="formulario_login" action="{{ path('login_check') }}" method="post">
         <label for="username">Usuario:</label>
         <input id="username" type="text" name="_username" />
         <label for="password">Contraseña:</label>
         <input id="password" type="password" name="_password" /> 
         <input type="hidden" name="_target_path" value="/listaPartidas">
-{#        <input type="submit" name="login" />#}
-    </form>
+    </form>#}
 </div>
 
 {% endblock %}

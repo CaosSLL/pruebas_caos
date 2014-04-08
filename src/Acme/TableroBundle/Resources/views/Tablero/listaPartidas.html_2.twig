@@ -1,0 +1,65 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<h1>Bienvenido: {{ usuario.username }}!</h1>
+
+<div class="listado_partidas">
+    <ul>
+    {% for partida in partidas %}
+        {% if partida.usuario.getId == usuario.getId %}
+        <li>
+            <div class="partida">
+                <span>{{ partida.partida.getFecha|date("j - F - Y") }}</span>
+                <div class="usuarios" id="usuarios{{partida.partida.getId}}">
+                    <h3>Usuarios de la partida:</h3>
+                    <table class="listaUsuarios">
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Personaje</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for usu in partidas %}
+                            {% if usu.partida.getId == partida.getPartida.getId %}
+                            <tr>
+                                <td>{{ usu.usuario.getUsername }}</td>
+                                <td>{{ usu.jugador.getPersonaje }}</td>
+                            </tr>
+                            {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</div>
+
+{#<script type="text/javascript">
+
+    function cargarUsuarios(id) {
+        var div = "#usuarios" + id;
+        if ($(div).text() === "") {
+            $(div).load("{{ url("acme_lista_usuarios",{"id":0 }) }}" + id, null, function() {
+                $(div).prepend("<h3>Usuarios de la partida:</h3>");
+                var url = "{{ url("acme_tablero",{"id_partida":0  }) }}" + id;
+                $(div).append("<a href="+url+">Ir a la partida</a>");
+            });
+        } else {
+            $(div).slideToggle()();
+        } 
+    }
+
+</script>#}
+{% endblock %}
